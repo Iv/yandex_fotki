@@ -1,0 +1,27 @@
+{% if article.album %}
+{% if article.yandex_album %}
+     <p class="galleria">
+        {% for image in article.galleryimages %}
+        <span itemscope itemtype="http://schema.org/ImageObject">
+        <a class="{{ article.album }} cboxElement"
+               href="{{ image.img.XXXL.href }}"
+               title="{{ image.summary }}" itemprop="contentUrl"
+               ><img src="{{ image.img.L.href }}" alt="{{ image.summary }}"></a>
+        <meta itemprop="caption" content="{{ image.summary }}">
+        </span>
+        {% endfor %}
+    </p>
+{% else %}
+    <p class="galleria">
+        {% for image in article.galleryimages %}
+        <span itemscope itemtype="http://schema.org/ImageObject">
+        <a class="{{ article.album }} cboxElement"
+               href="{{ SITEURL }}/thumbnails/large/gallery/{{article.album}}/{{ image }}"
+               title="{{ image }}" itemprop="contentUrl"
+               ><img src="{{ SITEURL }}/thumbnails/medium/gallery/{{article.album}}/{{ image }}" alt="{{ article.notes[image] }}"></a>
+        <meta itemprop="caption" content="{{ article.notes[image] }}">
+        </span>
+        {% endfor %}
+    </p>
+{% endif %}
+{% endif %}

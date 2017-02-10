@@ -1,0 +1,10 @@
+{% if article %}{% if article.album %}
+    <link href="/static/galleria/themes/twelve/galleria.twelve.css" rel="stylesheet" type="text/css" />
+    <style>
+        #galleria, .galleria {
+            max-width:  760px;
+            height: 500px;
+        }
+        body .galleria-thumbnails .galleria-image{width:160px; height:120px;}
+    </style>
+{% endif %}{% endif %}

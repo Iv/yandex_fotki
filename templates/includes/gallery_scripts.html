@@ -1,0 +1,14 @@
+{% if article.album %}
+    <script type="text/javascript" src="/static/galleria/galleria-1.4.2.min.js"></script>
+    <script type="text/javascript" src="/static/galleria/themes/twelve/galleria.twelve.min.js" ></script>
+    <script type="text/javascript">
+       if($('.galleria').length) {
+            Galleria.run('.galleria', {
+                imageCrop: false,
+                height: '500px',
+                width: '750px'
+            });
+        }
+    </script>
+{% endif %}
+
