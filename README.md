@@ -18,6 +18,7 @@ fotki.yandex.ru api description [here](https://tech.yandex.ru/fotki/).
  1. Add to plugins: PLUGINS = […, 'yandex_fotki', …]
  2. Add **YANDEX_FOTKI_USER** settings to the pelicanconf.py
  3. Change templates to use **article.galleryimages** list and cover image **article.cover** dict
+ 4. Add metadata to article: **yandex_gallery: 532270** where 532270 is gallery ID.
 
 
 
