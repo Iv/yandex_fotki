@@ -4,7 +4,7 @@
         {% for image in article.galleryimages %}
         <span itemscope itemtype="http://schema.org/ImageObject">
         <a class="{{ article.album }} cboxElement"
-               href="{{ image.img.XXXL.href }}"
+               href="{{ image.img.large.href }}"
                title="{{ image.summary }}" itemprop="contentUrl"
                ><img src="{{ image.img.L.href }}" alt="{{ image.summary }}"></a>
         <meta itemprop="caption" content="{{ image.summary }}">

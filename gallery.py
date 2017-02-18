@@ -38,6 +38,14 @@ def get_cover(user, album):
     return cover
 
 
+def choose_large_image(image):
+    for size in ['XXXL', 'XXL', 'XL', 'L', 'M', 'S']:
+        if size in image['img']:
+            image['img']['large'] = image['img'][size]
+            break
+    return image
+
+
 def add_gallery_post(generator):
     USER = generator.settings.get('YANDEX_FOTKI_USER')
     for article in generator.articles:
@@ -46,9 +54,8 @@ def add_gallery_post(generator):
 
             article.yandex_album = album
             article.album = album
-            article.galleryimages = get_photos(USER, album)
-            article.cover = get_cover(USER, album)
-
+            article.galleryimages = map(choose_large_image, get_photos(USER, album))
+            article.cover = choose_large_image(get_cover(USER, album))
 
 def add_gallery_page(generator):
     USER = generator.settings.get('YANDEX_FOTKI_USER')
@@ -58,8 +65,8 @@ def add_gallery_page(generator):
 
             page.yandex_album = album
             page.album = album
-            page.galleryimages = get_photos(USER, album)
-            page.cover = get_cover(USER, album)
+            page.galleryimages = map(choose_large_image, get_photos(USER, album))
+            page.cover = choose_large_image(get_cover(USER, album))
 
 
 def register():
