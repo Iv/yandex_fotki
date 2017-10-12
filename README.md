@@ -4,21 +4,30 @@ Yandex-Fotki
 
 Pelican plugin to use [fotki.yandex.ru](https://fotki.yandex.ru/) as fast photo gallery CDN for free.
 
-It is proff on concept, but works well for me.
+It is proof of concept but works well for me.
 
-Plugin get images throught json api and put lists to **article** object.  
+The plugin gets images through JSON API and put lists to article object.
 Sample templates are in **/tmplates/includes/** folder.
 
 fotki.yandex.ru api description [here](https://tech.yandex.ru/fotki/).
+
 
 
 ### HOWTO use
 
 
  1. Add to plugins: PLUGINS = […, 'yandex_fotki', …]
- 2. Add **YANDEX_FOTKI_USER** settings to the pelicanconf.py
- 3. Change templates to use **article.galleryimages** list and cover image **article.cover** dict
- 4. Add metadata to article: **yandex_gallery: 532270** where 532270 is gallery ID.
+ 2. Add **YANDEX_FOTKI_USER** settings to the pelicanconf.py  
+    ```
+    YANDEX_FOTKI_USER = 'sky7club'
+    ```
+ 3. Change templates to use **article.galleryimages** list and cover image **article.cover** dict.
+ 4. Add metadata to article:    
+    ```
+    yandex_gallery: 532270
+    ```
+
+    where 532270 is gallery id.
 
 
 
